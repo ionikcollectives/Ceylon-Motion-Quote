@@ -166,6 +166,9 @@ body::before{
 /* logo image / typographic fallback system */
 .logo-mark{ display:flex; flex-direction:column; align-items:center; }
 .logo-img{ max-height:64px; max-width:220px; width:auto; object-fit:contain; }
+/* per-logo sizing: the Ceylon badge is round (reads bigger), the IONIK wordmark is wide (reads smaller) */
+.ceylon-mark .logo-img{ max-height:96px; }
+.ionik-mark .logo-img{ max-height:34px; }
 .logo-fallback{ display:none; flex-direction:column; align-items:center; }
 .logo-fallback.is-visible{ display:flex; }
 .ceylon-mark .lm-line{ width:44px; height:1px; background:var(--dusty-rose); margin-bottom:10px; }
@@ -208,8 +211,8 @@ body::before{
 .stat-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); margin-top:10px; }
 .stat-card{ background:var(--near-black); padding:34px 24px; display:flex; flex-direction:column; gap:8px; }
 .stat-card-lg{ grid-column:span 1; }
-/* IG grid has 5 cards in a 3-col grid — stretch the last one so no empty cell shows */
-.stat-grid-ig .stat-card:last-child{ grid-column:span 2; }
+/* 5 cards in a 3-col grid — stretch the last one so no empty cell shows */
+.stat-grid .stat-card:nth-child(5):last-child{ grid-column:span 2; }
 .stat-num{ font-family:var(--font-head); font-weight:700; font-size:clamp(30px,3.4vw,46px); color:var(--bone); font-variant-numeric:tabular-nums; }
 .stat-label{ font-size:13px; opacity:.6; letter-spacing:.02em; }
 
@@ -408,6 +411,8 @@ body::before{
 .closing-tag{ font-family:var(--font-head); font-size:13px; letter-spacing:.16em; opacity:.7; margin:10px 0 34px; }
 .closing-brands{ display:flex; align-items:center; justify-content:center; gap:24px; }
 .closing-logo .logo-img{ max-height:38px; max-width:170px; }
+.closing-logo.ceylon-mark .logo-img{ max-height:56px; }
+.closing-logo.ionik-mark .logo-img{ max-height:20px; }
 .closing-logo .logo-fallback span{ font-family:var(--font-head); font-weight:600; font-size:15px; letter-spacing:.06em; color:var(--bone); }
 .cb-x{ font-family:var(--font-editorial); font-style:italic; color:var(--dusty-rose); font-size:18px; }
 .closing-tagline{ font-family:var(--font-editorial); font-style:italic; font-size:19px; color:var(--dusty-rose); margin-top:16px; }
